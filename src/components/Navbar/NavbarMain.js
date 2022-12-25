@@ -1,19 +1,18 @@
 import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import '../../custom.scss';
 import NavItems from './Navbardata';
 import Logo from '../../assets-old/images/cropped-bitbyteindia-e1569401953174.png';
 import Dropdown from './NavbarDropdown';
+import ButtonCustom from '../Basics/buttonComponent';
 
 function NavbarMain() {
   const expand = 'md';
   return (
     <>
       {
-        <Navbar key={expand} bg="primary" expand={expand} className="mb-3">
+        <Navbar key={expand} expand={expand} className="mb-3">
           <Container>
             <Navbar.Brand href="#">
               <img src={Logo} alt="Logo" width="120px" />
@@ -42,7 +41,11 @@ function NavbarMain() {
                     );
                   })}
                 </Nav>
-                <Button variant="warning">Warning</Button>
+                <ButtonCustom
+                  content="GET STARTED WITH US"
+                  color="#FF8C00"
+                  isGlow={false}
+                />
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>

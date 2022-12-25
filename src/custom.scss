@@ -12,5 +12,14 @@ $theme-colors: (
   color: rgb(172, 172, 172) !important;
 }
 
+.custom-button {
+  border: none;
+  color: white;
+}
+
+.light-blue-text {
+  color: #5ba0cd;
+}
+
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
