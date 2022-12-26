@@ -5,10 +5,12 @@ $theme-colors: (
 
 .nav-dropdown a {
   color: white !important;
-  font-weight: 450;
+  font-weight: bold;
+  padding: 0;
 }
 
-.nav-dropdown a:hover {
+.nav-dropdown a:hover,
+.navLink:hover {
   color: rgb(172, 172, 172) !important;
 }
 
@@ -20,6 +22,21 @@ $theme-colors: (
 .light-blue-text {
   color: #5ba0cd;
 }
+@keyframes dropdownAnim {
+  from {
+    opacity: 0%;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 1rem; // remove the gap so it doesn't close
+  animation: dropdownAnim 0.5s ease;
+}
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';

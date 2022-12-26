@@ -28,16 +28,27 @@ function NavbarMain() {
                   <img src={Logo} alt="Logo" width="120px" />
                 </Offcanvas.Title>
               </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3 text-light">
+              <Offcanvas.Body
+                style={{ fontFamily: 'Open Sans' }}
+                className="text-light small fw-bold"
+              >
+                <Nav className="justify-content-end flex-grow-1 pe-3">
                   {NavItems.map((Item) => {
                     const { title, items } = Item;
                     return items.length === 0 ? (
-                      <Nav.Link className="text-light" href="">
-                        {title}
+                      <Nav.Link
+                        className="navLink text-light p-0 m-md-4"
+                        href=""
+                      >
+                        {title.toUpperCase()}
                       </Nav.Link>
                     ) : (
-                      <Dropdown title={title} items={items} expand />
+                      <Dropdown
+                        classAdd="text-light m-md-4"
+                        title={title.toUpperCase()}
+                        items={items}
+                        expand
+                      />
                     );
                   })}
                 </Nav>
@@ -45,6 +56,7 @@ function NavbarMain() {
                   content="GET STARTED WITH US"
                   color="#FF8C00"
                   isGlow={false}
+                  classAdd="my-md-3 px-md-4 small"
                 />
               </Offcanvas.Body>
             </Navbar.Offcanvas>
